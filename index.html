@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset=utf-8>
+        <title>Filter</title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+	</head>	
+    <body>	
+		
+        <div class="wrapper main">
+			<div class="main-content">
+				<div class="header">
+					<div class="pull-left f-30 bold">Filter <span class="blur">airports</span></div>
+					<div class="m-10 hand" title="Download" onclick="buildTable(true)">
+						<a id="downloadAnchorElem" style="display:none"></a>
+						<!-- <a class="pull-right"><i class="fa fa-th-large"></i></a> -->
+						<a class="pull-right"><i class="fa fa-download"></i></a>
+					</div>		
+				</div>
+				<div class="header header-options">
+					<div class="pull-left">
+						<div class="text-left f-20 bold">Type</div>
+						<div class="f-s types" id="type-filter">
+						</div>
+					</div>
+					<div class="search-panel pull-right w-25">
+						<div class="f-20 bold text-left" >Filter by search</div>
+						<div><input  type="text" class="search" onkeyup="filter(this)"/></div>
+					</div>		
+				</div>
+				<div class="table-display">
+					<table class="table">
+						<thead id="table-head"></thead>
+						<tbody id="table-body"></tbody>
+					</table>
+				</div>
+				<div>Display Rows:
+					<select onchange="displayRecords(this)">
+						<option value="4">4</option>
+						<option value="20">10</option>
+						<option value="25">25</option>
+						<option value="100">100</option>
+					</select>
+				</div>
+				<footer class="row mt-7">
+					<div id="prev-arrow" class="w-25 f-30 bold hand  prev" onclick="prevSet()">
+						<i class="fa fa-arrow-left"></i>	
+					</div>
+					<div class="w-50">showing <span id="display" class="bold">5-8</span> of <span id="result" class="bold">10,382 </span> results</div>
+					<div id="next-arrow" class="w-25 f-30 bold hand next" onclick="nextSet()">
+						<i class="fa fa-arrow-right "></i>
+					</div>	
+				</footer>
+				
+			</div>
+			
+		</div>
+		
+		</body>
+		<script src="static/jquery.min.js"></script>
+		<script type="text/javascript" src="data/airports.json"></script>
+	<script src="static/script.js"></script>
+</html>
