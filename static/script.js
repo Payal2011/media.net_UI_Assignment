@@ -7,7 +7,7 @@ var state = {
 var storedTypes = localStorage.getItem('types')
 var selectedTypes=(storedTypes == null || storedTypes == "") ? [] : JSON.parse(storedTypes);  //  caching 
 var currentSearch = "";
-var searchable = ['name','iata','icao','latitude','longitude']
+var searchable = ['name','iata','icao','latitude','longitude','elevation']
 var allTypes = ['small','medium','large','heliport','closed','in your favourite']
 var tableHeader = ['Name','ICAO','IATA','Elevation (meters)','Lat.','Long.','Type']
 
@@ -105,8 +105,9 @@ function search(filtereddata){
 		for (var i=0 ; i < filtereddata.length ; i++)
 		{
 			for(var j=0 in searchable){
+			
 				if((filtereddata[i][searchable[j]]) != null){
-					if (((filtereddata[i][searchable[j]]).toLowerCase()).includes(currentSearch.toLowerCase())) {
+					if (((filtereddata[i][searchable[j]]).toString().toLowerCase()).includes(currentSearch.toString().toLowerCase())) {
 						searchResult.push(filtereddata[i]);
 					}
 				}			

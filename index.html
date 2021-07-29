@@ -12,7 +12,7 @@
 			<div class="main-content">
 				<div class="header">
 					<div class="pull-left f-30 bold">Filter <span class="blur">airports</span></div>
-					<div class="m-10 hand" title="Download" onclick="buildTable(true)">
+					<div class="m-10 hand" title="Download To Json" onclick="buildTable(true)">
 						<a id="downloadAnchorElem" style="display:none"></a>
 						<!-- <a class="pull-right"><i class="fa fa-th-large"></i></a> -->
 						<a class="pull-right"><i class="fa fa-download"></i></a>
@@ -44,11 +44,11 @@
 					</select>
 				</div>
 				<footer class="row mt-7">
-					<div id="prev-arrow" class="w-25 f-30 bold hand  prev" onclick="prevSet()">
+					<div id="prev-arrow" class="w-25 f-30 bold hand text-left prev" onclick="prevSet()">
 						<i class="fa fa-arrow-left"></i>	
 					</div>
 					<div class="w-50">showing <span id="display" class="bold">5-8</span> of <span id="result" class="bold">10,382 </span> results</div>
-					<div id="next-arrow" class="w-25 f-30 bold hand next" onclick="nextSet()">
+					<div id="next-arrow" class="w-25 f-30 bold hand text-right next" onclick="nextSet()">
 						<i class="fa fa-arrow-right "></i>
 					</div>	
 				</footer>

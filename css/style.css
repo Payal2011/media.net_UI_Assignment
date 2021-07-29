@@ -96,8 +96,7 @@ body{
 }
 table{
 	border-spacing: unset;
-	width:95%;
-	margin : 15px auto;
+	width:100%;
 	font-size:14px;
 	position: relative;
 } 
