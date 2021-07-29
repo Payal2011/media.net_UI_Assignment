@@ -4,8 +4,8 @@ var state = {
 	'page': 1,
 	'rows':4,
 }
-console.log(localStorage.getItem('types') == "")
-var selectedTypes=(localStorage.getItem('types') == "") ? [] :JSON.parse(localStorage.getItem('types'));  //  caching 
+var storedTypes = localStorage.getItem('types')
+var selectedTypes=(storedTypes == null || storedTypes == "") ? [] : JSON.parse(storedTypes);  //  caching 
 var currentSearch = "";
 var searchable = ['name','iata','icao','latitude','longitude']
 var allTypes = ['small','medium','large','heliport','closed','in your favourite']
@@ -37,7 +37,7 @@ function convertData(airportJson){
 }
 
 function buildTypeFilter(){
-	var arrData = selectedTypes
+	var arrData = selectedTypes;
 	var divType = $('#type-filter');
 	var index = 0;
 	var isChecked,htmlType = "";
